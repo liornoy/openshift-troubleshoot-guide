@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data: 
+
+  config.yaml: |
+
+    nodeExporter: 
+      collectors: 
+        # enable a collector which is disabled by default
+        tcpstat: 
+          enabled: true
